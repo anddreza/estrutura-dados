@@ -28,7 +28,7 @@ int main(void){
 	}
 	
 	impressao(bd);
-	
+
 	return 0;
 }
 
