@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 
 typedef struct equacao{
 	float x1, x2, a, b, c;
