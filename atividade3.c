@@ -3,13 +3,21 @@ Também uma função entrada de dados e uma função de saídas de dados. */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "Exercicio03.h"
 
 #define TAM 3
 
-typedef struct{
-	float codigo, peso, preco;
-	char nome[50];
-}Peca;
-
-Peca insercao(void);
-void saida(Peca a[]);
+int main(void){
+	int i;
+	Peca bd[TAM];
+	
+	for(i=0;i<TAM;i++){
+		printf("---%i---\n",i);
+		//bd[i]=insercao();
+		inserir(&bd[i]);
+	}
+	
+	impressao(bd, TAM);
+	
+	return 0;
+}
