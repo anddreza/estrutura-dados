@@ -20,7 +20,7 @@ void impressao(Pessoa a[]);
 
 int main(void){
 	int i;
-	Pessoa bd[TAM];
+	Pessoa bd[TAM];	
 	
 	for(i=0;i<TAM;i++){
 		printf("---%i---\n",i);
@@ -53,7 +53,7 @@ Pessoa insercao(void){
 	fflush(stdin);
 	getchar();
 
-	printf("Digite o sexo: ");
+	printf("Digite o sexo: ") ;
 	scanf("%c",&a.sexo);
 	fflush(stdin);
 	getchar();
