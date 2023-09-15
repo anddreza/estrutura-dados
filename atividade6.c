@@ -18,8 +18,8 @@ int main(void){
 	conta(&n, &n2, &r, &r2, &r3);
 
 	printf("Soma %f \n", r);
-	printf("Soma %f \n", r2);
-	printf("Soma %f \n", r3);
+	printf("Subtração %f \n", r2);
+	printf("Multiplicação %f \n", r3);
 
 
 	return 0;
