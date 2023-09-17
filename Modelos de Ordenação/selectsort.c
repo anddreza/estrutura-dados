@@ -83,21 +83,25 @@ void selectSort(int *vet){
     
 	qtd_trocas = 0; qtd_comparacoes = 0;
 	//TAMANHO -2 ainda não definido
+	// Por que o -2? O for de baixo começa no +2, então aqui teria que diminuir para -2
 	for(i = 0; i <= TAMANHO-2; i++){
 		// A primeira posição do i, que será zero nesse caso
+		// Não joga o vetor todo somente o valor na posição "i", é uma posição por iteração
 		aux = vet[i];
 		// A segunda posição do i, que será i + 1
 		menor = vet[i + 1];
 		pos = i + 1;
-		for(j = i + 2; j<= TAMANHO; j++){
+		for(j = i + 2; j<= TAMANHO-1; j++){
+			// Se o vetor na posição vet[j]
 			if(vet[j] < menor){
 				menor = vet[j];
 				pos = j;
+				//qtd_trocas++;
 			}
 			qtd_comparacoes++;
 		}
 
-		if(menor < aux){
+		if(vet[i + 1] < vet[i]){
 			vet[i] = vet[pos];
 			vet[pos] = aux;
 			qtd_trocas++;	
