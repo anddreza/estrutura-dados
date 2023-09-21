@@ -56,6 +56,7 @@ int main(void) {
 // Função geração de números
 void geraNumero(int *vet, int op) {
     int i, j;
+
     switch (op) {
         case 1: // Ordenados
             for (i = 0; i < TAMANHO; i++) {
@@ -80,7 +81,7 @@ void geraNumero(int *vet, int op) {
 void mergeSort(int *vet, int inicio, int fim){
 	int meio;
 	if(inicio < fim){
-		meio = (fim + inicio)/2;
+		meio = inicio + (fim - inicio)/2;
 		mergeSort(vet, inicio, meio);
 		mergeSort(vet, meio + 1, fim);
 		intercala(vet, inicio, fim, meio);
@@ -92,27 +93,27 @@ void intercala(int x[], int inicio, int fim, int meio){
 	int iniciovetor1 = inicio;
 	int iniciovetor2 = meio+1;
 	int i;
-	//qtd_trocas = 0; qtd_comparacoes = 0;
 	int aux[TAMANHO];
 
 	while(iniciovetor1 <= meio && iniciovetor2 <= fim){
-		qtd_trocas++;
-		qtd_comparacoes++;
+		/* qtd_trocas++; */
 		if(x[iniciovetor1] <= x[iniciovetor2]){
 			aux[poslivre] = x[iniciovetor1];
 			iniciovetor1++;
+			//qtd_trocas++;
 		} else {
 			aux[poslivre] = x[iniciovetor2];
 			iniciovetor2++;
+			qtd_trocas++;
 		}
-		qtd_trocas++;
+		poslivre++; 
 		qtd_comparacoes++; 
-		poslivre++;  
 	} 
+
 	
 	for(i = iniciovetor1; i <= meio; i++){
 		aux[poslivre] = x[i];
-		qtd_trocas++;
+		//qtd_trocas++;
 		poslivre++;
 	}
 
@@ -121,12 +122,10 @@ void intercala(int x[], int inicio, int fim, int meio){
 		qtd_trocas++;
 		poslivre++;
 	}
-
 	for(i = inicio; i <= fim; i++){
 		x[i] = aux[i];
-		qtd_trocas++;
 	}
-
+	qtd_trocas++;
 }
 
 // Função impressão do vetor
@@ -139,4 +138,3 @@ void imprimirVetor(int *vet){
 		}
 	}
 }
-
