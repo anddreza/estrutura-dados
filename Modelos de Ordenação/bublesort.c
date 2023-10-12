@@ -83,7 +83,7 @@ void bubbleSort(int *vet){
     
 	qtd_trocas = 0; qtd_comparacoes = 0;
 
-    while (n <= TAMANHO && troca == 1) {
+    while (n <= TAMANHO && troca == 1){
         troca = 0;
         for (i = 0; i <= TAMANHO-2; i++) {
         	// Ponto do algoritmo para contar as comparações

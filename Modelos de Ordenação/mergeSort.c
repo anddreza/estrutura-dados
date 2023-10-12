@@ -21,6 +21,7 @@ int main(void) {
 	printf("Ordenado:\n");
 	geraNumero(vet1,1);
 	tempo_inicial = clock();
+	qtd_comparacoes = 0, qtd_trocas = 0;
 	mergeSort(vet1, 0, TAMANHO-1);
 	tempo_final = clock() - tempo_inicial;
 	
@@ -32,6 +33,7 @@ int main(void) {
 	printf("\nInvertido:\n");
 	geraNumero(vet1,2);
 	tempo_inicial = clock();
+	qtd_comparacoes = 0, qtd_trocas = 0;
 	mergeSort(vet1, 0, TAMANHO-1);
 	tempo_final = clock() - tempo_inicial;
 	
@@ -43,6 +45,7 @@ int main(void) {
 	printf("\nAleatorio:\n");
 	geraNumero(vet1,3);
 	tempo_inicial = clock();
+	qtd_comparacoes = 0, qtd_trocas = 0;
 	mergeSort(vet1, 0, TAMANHO-1);
 	tempo_final = clock() - tempo_inicial;
 	
@@ -80,11 +83,13 @@ void geraNumero(int *vet, int op) {
 // Função ordenação merge sort
 void mergeSort(int *vet, int inicio, int fim){
 	int meio;
+	//qtd_trocas++;
 	if(inicio < fim){
 		meio = inicio + (fim - inicio)/2;
 		mergeSort(vet, inicio, meio);
 		mergeSort(vet, meio + 1, fim);
 		intercala(vet, inicio, fim, meio);
+		//qtd_trocas++;
 	}
 }
 
@@ -94,26 +99,26 @@ void intercala(int x[], int inicio, int fim, int meio){
 	int iniciovetor2 = meio+1;
 	int i;
 	int aux[TAMANHO];
+	//qtd_comparacoes = 0, qtd_trocas = 0;
+
 
 	while(iniciovetor1 <= meio && iniciovetor2 <= fim){
-		/* qtd_trocas++; */
+		 qtd_comparacoes++;
 		if(x[iniciovetor1] <= x[iniciovetor2]){
 			aux[poslivre] = x[iniciovetor1];
 			iniciovetor1++;
-			//qtd_trocas++;
+			qtd_trocas++;
 		} else {
 			aux[poslivre] = x[iniciovetor2];
 			iniciovetor2++;
-			qtd_trocas++;
+			qtd_trocas++; 
 		}
 		poslivre++; 
-		qtd_comparacoes++; 
 	} 
-
 	
 	for(i = iniciovetor1; i <= meio; i++){
 		aux[poslivre] = x[i];
-		//qtd_trocas++;
+		qtd_trocas++;
 		poslivre++;
 	}
 
@@ -125,7 +130,7 @@ void intercala(int x[], int inicio, int fim, int meio){
 	for(i = inicio; i <= fim; i++){
 		x[i] = aux[i];
 	}
-	qtd_trocas++;
+
 }
 
 // Função impressão do vetor
