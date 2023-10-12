@@ -1,3 +1,4 @@
+/*2. Faça um programa que cadastre 15 números inteiros, ordene-os usando o método insertion sort e em seguida encontre o menor número e quantas vezes ele apareceu no vetor. */
 #include <stdio.h>
 #include <stdlib.h>
 
