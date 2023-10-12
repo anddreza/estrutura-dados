@@ -12,3 +12,8 @@ typedef -> typedef struct Pessoa P_ssoa
 - Um dado composto pode ser composto por vários dados primitivos. 
 
 - O que é um ponteiro? É um tipo de variável que guarda endereço de memória
+
+- Parametros de uma função ou métodos mesmo que seja o mesmo tipo eles tem que ser separados, exemplo void imprime(int a, int b), não pode ser void imprime (int a, b)
+
+- system(cls): limpar a tela, deixar mais bonitinho*
+
