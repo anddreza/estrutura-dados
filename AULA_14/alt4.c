@@ -4,6 +4,9 @@
 #define MAX 10
  
 void dijikstra(int G[MAX][MAX], int n, int startnode);
+ 
+
+
 void main(){
 	int Graph[MAX][MAX], i, j, n, u;
     n = 9;
@@ -135,11 +138,8 @@ void main(){
  
 void dijikstra(int G[MAX][MAX], int n, int startnode)
 {
-    
 	int cost[MAX][MAX], distance[MAX], pred[MAX];
 	int visited[MAX], count, mindistance, nextnode, i,j;
-	char listName[10] = {'A', 'N', 'O', 'S', 'I', 'B', 'L', 'H', 'C', 'G'};
-
 	for(i=0;i < n;i++)
 		for(j=0;j < n;j++)
 			if(G[i][j]==0)
@@ -176,15 +176,15 @@ void dijikstra(int G[MAX][MAX], int n, int startnode)
 	}
  
 	for(i=0;i < n;i++)
-		if(i!=startnode){
-			printf("\nDistance of %d = %i", i, distance[i]);
-		//	printf("\nCaminho para %c", listName[i]);
-
-			j=i; //
-			do{
+		if(i!=startnode)
+		{
+			printf("\nDistance of %d = %d", i, distance[i]);
+			printf("\nPath = %d", i);
+			j=i;
+			do
+			{
 				j=pred[j];
 				printf(" <-%d", j);
-				printf("%c", listName[j]);
 			}
 			while(j!=startnode);
 		}

@@ -1,8 +1,6 @@
-/*****Please include following header files*****/
 #include<stdio.h>
 #include<limits.h>
 #include<stdbool.h>
-/***********************************************/
 
 #define VERTICES_COUNT 10
 
@@ -20,7 +18,7 @@ int MinimumDistance(int distance[], int shortestPathTreeSet[]){
 }
 
 void Print(int distance[]){
-	printf("Vertex    Distance from source\n");
+	printf("Vertex: Distance from source\n");
 	for (int i = 0; i < VERTICES_COUNT; ++i)
 		printf("%d\t  %d\n", i, distance[i]);
 }
@@ -62,4 +60,4 @@ int graph[VERTICES_COUNT][VERTICES_COUNT] = {
 	{ 0, 0, 0, 0, 25, 0, 0, 0, 80, 0 }
 };
 
-Dijkstra(graph[10][10], 0);
+Dijkstra(graph);

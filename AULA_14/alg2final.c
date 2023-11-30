@@ -177,14 +177,14 @@ void dijikstra(int G[MAX][MAX], int n, int startnode)
  
 	for(i=0;i < n;i++)
 		if(i!=startnode){
-			printf("\nDistance of %d = %i", i, distance[i]);
+			printf("\nDistance of %c = %i", listName[i], distance[i]);
 		//	printf("\nCaminho para %c", listName[i]);
 
 			j=i; //
 			do{
 				j=pred[j];
-				printf(" <-%d", j);
-				printf("%c", listName[j]);
+				printf(" <-%c", listName[j]);
+			//	printf("%c", listName[j]);
 			}
 			while(j!=startnode);
 		}
