@@ -20,25 +20,26 @@ int main(void){
 	inicio = novo;
 
 	novo->n=7;
-	novo->prox=NULL;
+	novo->prox=fim;
 	inicio->prox=novo;
 	novo->ant=inicio;
-	
 	fim->ant=novo;
-	
-
-	novo->n=2;
-	novo->prox=NULL;
-	inicio->prox = novo;
-	novo->ant=inicio;
 
 	inicio = novo;
-
+	
+	novo->n=2;
+	novo->prox=fim;
+	inicio->prox=novo;
+	novo->ant=inicio;
+	fim->ant=novo;
+	
+	inicio = novo;
 
 	novo->n=8;
-	novo->prox=NULL;
-	inicio->prox = novo;
+	novo->prox=fim;
+	inicio->prox=novo;
 	novo->ant=inicio;
-
+	fim->ant=novo;
+	
 	inicio = novo;
 }

@@ -12,7 +12,7 @@ int main(void){
     LISTA *fim = NULL;
     LISTA *aux;
 
-	int i, numero;
+	int numero;
 
     do{
 		printf("Digite numero (-1 para sair): ");
@@ -41,7 +41,16 @@ int main(void){
     } else {
         aux = inicio;
         while (aux != NULL) {
+            if(anterior == null){
+                anterior = inicio->num;
+            }
             printf("%i\n",aux->num);
+            proxNum = aux->prox->num
+            if(anterior =< aux->num && proxNum => aux->num){
+                ordenado = true;
+            } else {
+                ordenado = false;
+            }
             aux = aux->prox;
         }
 	}
